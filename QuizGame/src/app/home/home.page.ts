@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { AnimationController, Platform, Animation } from '@ionic/angular';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +17,18 @@ export class HomePage implements AfterViewInit{
   showGame: Animation;
   showScore: Animation;
   activeView = 'menu';
+  categories = [];
 
   constructor(
     private animateCtrl: AnimationController,
-    private platform: Platform
-    ) {}
+    private platform: Platform,
+    private questionService: QuestionService
+    ) {
+      this.questionService.getCategories().subscribe(res => {
+        console.log('CATEG: ', res);
+        this.categories = res;
+      });
+    }
 
   ngAfterViewInit(): void {
     const viewWidth = this.platform.width();
