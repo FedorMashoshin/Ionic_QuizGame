@@ -1,19 +1,18 @@
-.wrapper{
-  height: 70%;
-  position: absolute;
-  width: 100%;
-  top: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-ion-button{
+button{
   width: 70%;
 }
 
 .quiz{
+  &__menu-box{
+    height: 70%;
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   &__logo{
     margin-top: 2rem;
     width: 50%;
@@ -21,5 +20,58 @@ ion-button{
   &__game-box, &__score-box{
     transform: translateX(1000px);
   }
+  &__game-box{
+    margin-top: -3rem;
+  }
+}
+ion-list{
+  margin: 0 auto;
+  width: 90%;
+  background-color: transparent;
+  ion-item{
+    border-radius: 15px;
+    --background: rgba(255, 255, 255, 0.3);
+    margin: 1rem 0;
+  }
+  ion-avatar{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8A323;
+  }
 }
 
+.test{
+  display: flex;
+  align-items: center;
+  h2{
+    color: white;
+    margin: 0;
+    width: 70%;
+  }
+  ion-button{
+    width: 30%;
+  }
+}
+
+.new{
+  background: rgba(255, 255, 255, 0.3) !important;
+  height: 4rem;
+  border-radius: 15px !important;
+  margin-bottom: 1rem;
+  border: 3px solid #EB0F70;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.score{
+  background: rgba(255, 255, 255, 0.3) !important;
+  height: 4rem;
+  border-radius: 15px !important;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border: 3px solid #F8A323;
+  font-weight: bold;
+}

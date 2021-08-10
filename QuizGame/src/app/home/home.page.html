@@ -1,28 +1,36 @@
-<ion-content>
+<ion-content [scrollY]="scrollEnabled">
   <img class="quiz__logo" src="/assets/GAME_LOGO.png" alt="">
 
-  <div class="wrapper" #menu>
+  <div class="wrapper quiz__menu-box" #menu>
 
-    <ion-button expand="full" (click)="openCategories()" color="light">
+    <button class="new" expand="full" (click)="openCategories()">
       New Game
-    </ion-button>
-    <ion-button expand="full"(click)="openHighscore()" color="light">
+    </button>
+    <button class="score" expand="full"(click)="openHighscore()">
       Highscore
-    </ion-button>
+    </button>
   </div>
 
   <div class="wrapper quiz__score-box" #score>
     <ion-button expand="full" fill="clear" color="light" (click)="showMenu()">
       <ion-icon name="chevron back-outline" slot="start"></ion-icon> Back
     </ion-button>
-    Score
+    <h2>Score</h2>
   </div>
 
   <div class="wrapper quiz__game-box" #game>
+   <div class="test">
+    <h2>Choose a Category</h2>
     <ion-button expand="full" fill="clear" color="light" (click)="showMenu()">
-      <ion-icon name="chevron back-outline" slot="start"></ion-icon> Back
+      <ion-icon name="arrow-back-circle-outline" slot="start"></ion-icon> Back
     </ion-button>
-    Game
+   </div>
+    <ion-list lines="none">
+      <ion-item *ngFor="let category of categories" tappable (click)="startGame(category)">
+        <ion-avatar slot="start">{{ category.id }}</ion-avatar>
+        <ion-label>{{ category.name }}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 
 </ion-content>

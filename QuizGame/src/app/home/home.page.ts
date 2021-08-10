@@ -18,6 +18,7 @@ export class HomePage implements AfterViewInit{
   showScore: Animation;
   activeView = 'menu';
   categories = [];
+  scrollEnabled = false;
 
   constructor(
     private animateCtrl: AnimationController,
@@ -59,11 +60,13 @@ export class HomePage implements AfterViewInit{
     this.hideMenuAnimation.direction('alternate').play();
     this.showGame.direction('alternate').play();
     this.activeView = 'game';
+    this.scrollEnabled = true;
   }
   openHighscore(){
     this.hideMenuAnimation.direction('alternate').play();
     this.showScore.direction('alternate').play();
     this.activeView = 'score';
+    this.scrollEnabled = true;
   }
 
   showMenu(){
@@ -74,5 +77,10 @@ export class HomePage implements AfterViewInit{
       this.showScore.direction('reverse').play();
     }
     this.activeView = 'menu';
+    this.scrollEnabled = false;
+  }
+
+  startGame(category){
+    console.log('SELECTED cat: ', category);
   }
 }
