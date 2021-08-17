@@ -10,5 +10,19 @@
 </ion-header>
 
 <ion-content fullscreen='true'>
-
+  <ion-slides #mySlider *ngIf="questions.length > 0 && done < 10" [options]="slideOptions">
+    <ion-slide *ngFor="let q of questions">
+      <h2 [innerHtml]='q.question'></h2>
+      <div class="" *ngIf='q.type === "multiple"'>
+        <button expand='full' *ngFor="let a of q.answers" (click)="selectAnswer(q, a)">
+          <span [innerHtml]='a'></span>
+        </button>
+      </div>
+      <div class="" *ngIf='q.type === "boolean"'>
+        <button (click)="selectAnswer(q, 'True')">Yes</button>
+        <button (click)="selectAnswer(q, 'False')">No</button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <div class="" *ngIf="done >= 10">DONE</div>
 </ion-content>
