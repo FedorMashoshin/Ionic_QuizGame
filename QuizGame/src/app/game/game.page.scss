@@ -1,0 +1,15 @@
+ion-toolbar{
+  height: 8vh;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  --color: #F8A323;
+  --background: rgba(255, 255, 255, 0.15);
+  ion-icon{
+    color: #F8A323;
+  }
+  h5{
+    margin: 0;
+  }
+}

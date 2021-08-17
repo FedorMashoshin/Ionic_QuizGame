@@ -1,9 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>game</ion-title>
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="end">
+      <ion-button (click)="endGame()">
+        <ion-icon slot="icon-only" name='close'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <h5>{{ category }}</h5>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen='true'>
 
 </ion-content>

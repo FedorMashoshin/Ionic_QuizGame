@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AnimationController, Platform, Animation } from '@ionic/angular';
 import { QuestionService } from '../services/question.service';
 
@@ -23,7 +24,8 @@ export class HomePage implements AfterViewInit{
   constructor(
     private animateCtrl: AnimationController,
     private platform: Platform,
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private router: Router
     ) {
       this.questionService.getCategories().subscribe(res => {
         console.log('CATEG: ', res);
@@ -82,5 +84,7 @@ export class HomePage implements AfterViewInit{
 
   startGame(category){
     console.log('SELECTED cat: ', category);
+    this.router.navigateByUrl(`/game/${category.id}`, {replaceUrl: true});
+    this.showMenu();
   }
 }
