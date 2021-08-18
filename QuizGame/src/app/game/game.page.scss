@@ -18,3 +18,38 @@ ion-slide{
   display: flex;
   flex-direction: column;
 }
+p{
+  width: 90%;
+  text-align: left;
+  color: #fff;
+  font-weight: lighter;
+}
+.bold{
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  color: #fff;
+  height: 30vh;
+}
+.buttons{
+  width: 90%;
+}
+button{
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.3) ;
+  border-radius: 15px !important;
+  margin-bottom: 1rem;
+  border: 3px solid #F8A323;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+}
+button:hover{
+  background-color:#F8A323;
+}
