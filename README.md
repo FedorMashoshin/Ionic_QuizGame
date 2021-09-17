@@ -1,4 +1,4 @@
-# Mobile Quiz Game App 
+# 🎲 Mobile Quiz Game App 
 ### Built with [Ionic framework](https://ionicframework.com/)
 
 
